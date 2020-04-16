@@ -1,38 +1,58 @@
-.App {
+body {
+  background-color:#fbfbfb;
+  color: #5f5f5f;
+}
+
+
+.blockquote {
+  font-size: 20px;
   text-align: center;
+  margin: 10px 0 50px 0;
+}
+.blockquote img {
+  width: 20%;
+}
+.select-wrapper input.select-dropdown {
+  border-bottom-color: #ccc;
+}
+.infected {
+  border-bottom: 5px solid rgba(0, 0, 255, 0.5);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.recovered{
+  border-bottom: 5px solid rgba(0, 255, 0, 0.5);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.deaths{
+  border-bottom: 5px solid rgba(255, 0, 0, 0.5);
+}
+
+h6.title {
+  font-size: 16px;
+  color: #999;
+}
+h2 {
+  font-size: 30px;
+  color: #000;
+  font-weight: bold;
+  margin: 0;
+  padding: 5px 0 2px 0;
+}
+.card .card-content p {
+  margin: 0;
+  font-size: 14px;
+  white-space: nowrap;
+  padding: 10px 0 0 0;
+}
+.date {
+  color: #ccc;
+  font-size: 14px;
+}
+@media only screen and (max-width: 770px) {
+  .blockquote img {
+    width: 50%;
+    display: inline-block
   }
-}
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+  
 }
