@@ -7,4 +7,4 @@ you will have a strong understanding of React's workflow and the use of hooks.
 
 API used: https://covid19.mathdro.id/api
 
-live Demo: https://corona-tracker-react-app.herokuapp.com/
+Live Demo: https://corona-tracker-react-app.herokuapp.com/
