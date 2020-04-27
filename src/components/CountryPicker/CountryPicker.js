@@ -1,8 +1,15 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { fetchCountry } from '../../api';
+import { GlobalContext } from '../../context/GlobalState';
 import M from 'materialize-css/dist/js/materialize.min.js';
-const CountryPicker = ({ handleChange }) => {
+import axios from 'axios';
+const url = 'https://covid19.mathdro.id/api';
+
+const CountryPicker = () => {
+
     const [countries, setCountries] = useState([]);
+    const [state, setState] = useContext(GlobalContext);
+
     useEffect(() => {
 
         const fetchAPI = async () => {
@@ -11,11 +18,32 @@ const CountryPicker = ({ handleChange }) => {
         };
         fetchAPI();
 
-    }, [0])
+    }, []);
+
+    let name = '';
+
+    // onchange
+    const onChange = (e) => {
+        name = e.target.value;
+        let changeableUrl = url;
+        if (e.target.value) {
+            changeableUrl = `${url}/countries/${e.target.value}`;
+        }
+        axios.get(changeableUrl)
+            .then(res => {
+                setState({
+                    data: res.data,
+                    country: name,
+                    loading: false
+                })
+
+            })
+            .catch(err => console.log(err));
+    }
     return (
         <div className="row">
             <div className="input-field col s12">
-                <select onChange={(e) => handleChange(e.target.value)}>
+                <select onChange={onChange}>
 
                     <option value="">Global</option>
 

@@ -4,14 +4,7 @@ body {
 }
 
 
-.blockquote {
-  font-size: 20px;
-  text-align: center;
-  margin: 10px 0 50px 0;
-}
-.blockquote img {
-  width: 20%;
-}
+
 .select-wrapper input.select-dropdown {
   border-bottom-color: #ccc;
 }
@@ -48,11 +41,8 @@ h2 {
   color: #ccc;
   font-size: 14px;
 }
-@media only screen and (max-width: 770px) {
-  .blockquote img {
-    width: 50%;
-    display: inline-block
-  }
-
-  
+.image {
+  width: 170px;
+  margin: 50px auto 0;
+  display: block;
 }

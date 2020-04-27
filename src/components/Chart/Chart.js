@@ -1,8 +1,13 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useContext } from 'react'
 import { fetchDailyData } from '../../api';
 import { Line, Bar } from 'react-chartjs-2';
-const Chart = ({ data: { confirmed, recovered, deaths }, country }) => {
+import { GlobalContext } from '../../context/GlobalState';
+
+const Chart = () => {
     const [dailyreport, setDailyReport] = useState({});
+
+    const [state] = useContext(GlobalContext);
+    const { data: { confirmed, recovered, deaths }, country } = state;
 
     useEffect(() => {
         const fetchData = async () => {
